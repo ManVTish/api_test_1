@@ -1,31 +1,37 @@
-class BooksController < ApplicationController
+module Api
 
-  def index
-    render json: Book.all
-  end
+  module V1
 
-  def create
-    #book = Book.new(title: params[:title], author: params[:author])
-    book = Book.new(book_params)
+    class BooksController < ApplicationController
 
-    if book.save
-      render json: book, status: :created
-    else
-      render json: book.errors, status: :unprocessable_entity
+      def index
+        render json: Book.all
+      end
+
+      def create
+        #book = Book.new(title: params[:title], author: params[:author])
+        book = Book.new(book_params)
+
+        if book.save
+          render json: book, status: :created
+        else
+          render json: book.errors, status: :unprocessable_entity
+        end
+      end
+
+      def destroy
+        book = Book.find(params[:id])
+        book.destroy!
+
+        head :no_content
+      end
+
+      private
+
+      def book_params
+        params.require(:book).permit(:title, :author)
+      end
+
     end
   end
-
-  def destroy
-    book = Book.find(params[:id])
-    book.destroy!
-
-    head :no_content
-  end
-
-  private
-
-  def book_params
-    params.require(:book).permit(:title, :author)
-  end
-
 end
