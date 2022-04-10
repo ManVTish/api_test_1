@@ -3,6 +3,7 @@ module Api
   module V1
 
     class BooksController < ApplicationController
+      MAX_PAGINATION_LIMIT = 100
 
       def index
         #books = Book.all
@@ -34,8 +35,8 @@ module Api
 
       def limit
         [
-          params.fetch(:limit, 100).to_int,
-          100
+          params.fetch(:limit, MAX_PAGINATION_LIMIT).to_int,
+          MAX_PAGINATION_LIMIT
         ].min
       end
 
