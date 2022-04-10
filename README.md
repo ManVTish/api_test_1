@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is just a basic API written in Rails framework
 
-Things you may want to cover:
+Pending: 
+1) Authentication yet to be added
+2) Not yet hosted
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+More documnetation will be added for endpoints URL
