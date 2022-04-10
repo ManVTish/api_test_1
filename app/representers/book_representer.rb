@@ -6,10 +6,10 @@ class BookRepresenter
     def as_json
       {
         id: book.id,
-        author: book.author,
+        title: book.title,
       #   author_first_name: book.author.first_name,
       #   author_first_name: book.author.last_name,
-        author_name: author_name(book)
+        author_name: author_name(book),
         author_age: book.author.age
       }
     end
