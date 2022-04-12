@@ -5,10 +5,11 @@ module Api
       class AuthenticationController < ApplicationController
         rescue_from ActionController::ParameterMissing, with: :missing_parameter
         def create
-          p params.require(:username).inspect
-          p params.require(:username).inspect
+          user = User.find_by(username: params.require(:username))
+          #p params.require(:username).inspect
+          token = AuthenticationTokenService.call(user)
 
-          render json: {token: '123'}, status: :unprocessable_entity
+          render json: {token: token}, status: :unprocessable_entity
         end
 
         private
