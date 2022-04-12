@@ -10,28 +10,28 @@ Pending:
 
 More documnetation will be added for endpoints URL
 
-##JSON format for posting books:
+## JSON format for posting books:
 
-/api/v1/books/ (post)
+POST: /api/v1/books/
 
-{
+*{
   "title": "name_of_book",
   "author": {
-    "first_name": "",
-    "last_name": "",
+    "first_name": "  ",
+    "last_name": "  ",
     "age": 33
   }
-}
+}*
 
 But before posting use authentication
 
-##JSON format for authenticating user
+## JSON format for authenticating user
 
-/api/v1/authenticate/
+PSOT:  /api/v1/authenticate/
 
-{
-  "username": "",
-  "password": ""
-}
+*{
+  "username": "  ",
+  "password": "  "
+}*
 
 *remember to add token generated in the Authourization*
