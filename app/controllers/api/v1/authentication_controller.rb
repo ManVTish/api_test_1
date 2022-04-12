@@ -7,7 +7,7 @@ module Api
         def create
           user = User.find_by(username: params.require(:username))
           #p params.require(:username).inspect
-          token = AuthenticationTokenService.call(user)
+          token = AuthenticationTokenService.call(user.id)
 
           render json: {token: token}, status: :unprocessable_entity
         end
