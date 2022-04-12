@@ -27,7 +27,7 @@ But before posting use authentication
 
 ## JSON format for authenticating user
 
-PSOT:  /api/v1/authenticate/
+POST:  /api/v1/authenticate/
 
 *{
   "username": "  ",
