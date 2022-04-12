@@ -3,10 +3,13 @@ module Api
     module V1
   
       class AuthenticationController < ApplicationController
+        class AuthenticationError < StandardError
+        end
         rescue_from ActionController::ParameterMissing, with: :missing_parameter
         def create
           user = User.find_by(username: params.require(:username))
           #p params.require(:username).inspect
+          raise AuthenticationError unless user.authenticate(params.require(:password))
           token = AuthenticationTokenService.call(user.id)
 
           render json: {token: token}, status: :unprocessable_entity
