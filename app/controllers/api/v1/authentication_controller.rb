@@ -14,7 +14,7 @@ module Api
           raise AuthenticationError unless user.authenticate(params.require(:password))
           token = AuthenticationTokenService.call(user.id)
 
-          render json: {token: token}, status: :unprocessable_entity
+          render json: {token: token} , status: :created
         end
 
         private
