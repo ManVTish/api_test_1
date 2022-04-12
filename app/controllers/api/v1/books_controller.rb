@@ -40,7 +40,9 @@ module Api
       def authenticate_user
         token, _options = token_and_options(request)
         user_id = AuthenticationTokenService.decode(token)
-        raise user_id.inspect
+        #raise user_id.inspect
+      rescue ActiveRecord::RecordNotFound, JWT::DecodeError
+        render status: :unauthorized
       end
 
       def limit
