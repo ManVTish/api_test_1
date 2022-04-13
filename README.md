@@ -23,7 +23,7 @@ POST: /api/v1/books/
   }
 }*
 
-But before posting use authentication
+This posting requires authentication from below topic
 
 ## JSON format for authenticating user
 
