@@ -31,6 +31,8 @@ POST:  /api/v1/authenticate/
   "password": "  "
 }*
 
+*remember to add token generated in the Authourization*
+
 ## JSON format for creating user
 
 POST: /api/v1/users/
@@ -41,8 +43,6 @@ POST: /api/v1/users/
         "password": "  "
     }
 }*
-
-*remember to add token generated in the Authourization*
 
 ## Deployed on Heroku
 https://shielded-cliffs-57849.herokuapp.com/
