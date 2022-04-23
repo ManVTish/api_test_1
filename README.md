@@ -31,6 +31,17 @@ POST:  /api/v1/authenticate/
   "password": "  "
 }*
 
+## JSON format for creating user
+
+POST: /api/v1/users/
+
+*{
+    "user": {
+        "username": "  ",
+        "password": "  "
+    }
+}*
+
 *remember to add token generated in the Authourization*
 
 ## Deployed on Heroku
