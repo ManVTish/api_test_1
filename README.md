@@ -4,6 +4,8 @@ This is just a basic API written in Rails framework
 
 All instructions mentioned assumes use of Postman
 
+Pending:
+1) issue (internal server error) reported for authentication 
 
 More documnetation will be added for endpoints URL
 
